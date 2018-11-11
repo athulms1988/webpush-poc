@@ -2,9 +2,25 @@
   "name": "web-push-demo",
   "version": "0.0.1",
   "dependencies": {
+    "aws-sdk": "^2.353.0",
     "body-parser": "1.18.2",
     "express": "4.16.3",
-    "express-static": "1.2.5",
+    "express-static": "^1.2.6",
     "web-push": "3.3.0"
-  }
+  },
+  "description": "\"Hello, World\" with web push in Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://athulms1988@github.com/athulms1988/webpush-poc.git"
+  },
+  "author": "athul",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/athulms1988/webpush-poc/issues"
+  },
+  "homepage": "https://github.com/athulms1988/webpush-poc#readme"
 }
