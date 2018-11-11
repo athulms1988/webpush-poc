@@ -4,6 +4,7 @@
   "dependencies": {
     "aws-sdk": "^2.353.0",
     "body-parser": "1.18.2",
+    "cors": "^2.8.5",
     "express": "4.16.3",
     "express-static": "^1.2.6",
     "web-push": "3.3.0"
