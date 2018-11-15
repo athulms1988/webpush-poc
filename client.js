@@ -21,7 +21,7 @@ async function run() {
   console.log('Registered push');
 
   console.log('Sending push');
-  await fetch('http://webpushpoc-env.cdy4ke6esr.us-east-1.elasticbeanstalk.com/subscribe', {
+  await fetch('/subscribe', {
     method: 'POST',
     body: JSON.stringify(subscription),
     headers: {

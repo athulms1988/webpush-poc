@@ -8,6 +8,9 @@ const emailid = process.env.EMAIL_ID;
 const accessKeyID = process.env.ACCESS_KEY_ID;
 const secretAccessKey = process.env.SECRET_ACCESS_KEY;
 const region = process.env.REGION;
+const accountSid = 'ACf330804c8b7d0b3e1247499b7e1bd23e';
+const authToken = '9fa4d1a423c180b8be00c5e5ae56af15';
+const client = require('twilio')(accountSid, authToken);
 console.log("PUBLIC_VAPID_KEY "+process.env.PUBLIC_VAPID_KEY);
 console.log("PRIVATE_VAPID_KEY "+process.env.PRIVATE_VAPID_KEY);
 console.log("EMAIL_ID "+process.env.EMAIL_ID);
@@ -49,6 +52,16 @@ app.post('/sendpush', (req,res) => {
           console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
       } else {        
           data.Items.forEach(function(itemdata) {
+            
+
+client.messages
+      .create({
+        body: 'Hello there!',
+        from: 'whatsapp:+14155238886',
+        to: 'whatsapp:+919496328220'
+      })
+      .then(message => console.log(message.sid))
+      .done();
             webpush.sendNotification(itemdata, payload).then(response => {
               console.log(response);
               res.status(201).json({});
