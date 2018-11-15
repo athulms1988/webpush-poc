@@ -9,7 +9,7 @@ if ('serviceWorker' in navigator) {
 async function run() {
   console.log('Registering service worker');
   const registration = await navigator.serviceWorker.
-    register('/worker.js', {scope: '/'});
+    register('worker.js', {scope: '/expediahackathontvm/client/'});
   console.log('Registered service worker');
 
   console.log('Registering push');
@@ -21,7 +21,7 @@ async function run() {
   console.log('Registered push');
 
   console.log('Sending push');
-  await fetch('/subscribe', {
+  await fetch('https://7mm6wky8x7.execute-api.ap-south-1.amazonaws.com/default/webpushsubscription', {
     method: 'POST',
     body: JSON.stringify(subscription),
     headers: {
